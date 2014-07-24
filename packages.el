@@ -1,5 +1,10 @@
 ;;;; package.el
 
+
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
 (require 'use-package)
 
 ;;; packages
@@ -91,6 +96,16 @@
     (set-face-background 'flycheck-warning "#D0BF8F")))
 
 (use-package go-mode
+  :defer t
+  :init
+  (progn
+    (load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+    (setq gofmt-command "goimports")
+    (go-oracle-mode)
+  )
+)
+
+(use-package golint
   :defer t)
 
 (use-package haml-mode
@@ -109,7 +124,13 @@
   :defer t)
 
 (use-package js2-mode
-  :defer t)
+  :defer t
+  :mode ("\\.js$" . js2-mode)
+  :init
+  (progn
+    (add-hook 'js2-mode-hook 'ac-js2-mode)
+   )
+  )
 
 (use-package magit
   :init
@@ -162,18 +183,18 @@
 (use-package projectile
   ;;:init (projectile-global-mode 1)
   :bind (("s-p" . projectile-find-file)
-         ("s-b" . projectile-switch-to-buffer)
-         ("s-F" . projectile-ag))
+        ("s-b" . projectile-switch-to-buffer)
+        ("s-F" . projectile-ag))
   :config
   (progn
     (setq projectile-enable-caching t)
     (setq projectile-require-project-root nil)
-    (setq projectile-completion-system 'grizzl)
+    (setq projectile-completion-system 'ido)
     (setq projectile-globally-ignored-files
-      (append projectile-globally-ignored-files
-      '(
+      (append projectile-globally-ignored-files      '(
         ;; continuum import files
-        "*.cntmp" )))
+        "*.cntmp" ))
+     )
     (add-to-list 'projectile-globally-ignored-files ".DS_Store")))
 
 (use-package enh-ruby-mode

@@ -6,9 +6,9 @@
 (cask-initialize)
 
 ;; window size
-(setq default-frame-alist '((font . "Source Code Pro for Powerline-10")
-                            (width . 190)
-                            (height . 60)))
+(setq default-frame-alist '((font . "Mensch")
+                            (width . 200)
+                            (height . 80)))
 
 ;; UI
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -21,7 +21,7 @@
 
 ;; set the theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'monokai t nil)
+(load-theme 'cyberpunk t nil)
 
 ;; cursor
 (setq-default cursor-type 'bar)
@@ -149,6 +149,9 @@
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
+;; Auto pair brackets, etc.
+(electric-pair-mode 1)
+
 ;; configure hooks before we load packages and modes
 (load (emacs-d "autohooks"))
 (load-autohooks)
@@ -176,6 +179,8 @@
 (load (emacs-d "vendor/folding"))
 (folding-mode-add-find-file-hook)
 
+(load (emacs-d "vendor/jsfmt"))
+(add-hook 'before-save-hook 'jsfmt-before-save)
 ;; custom functions
 (load (emacs-d "functions"))
 ;; keybindings
