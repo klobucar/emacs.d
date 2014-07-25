@@ -36,7 +36,6 @@
 (depends-on "undo-tree")
 (depends-on "use-package")
 (depends-on "yaml-mode")
-(depends-on "grizzl")
 (depends-on "flx-ido")
 (depends-on "ac-js2")
 
