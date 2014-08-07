@@ -9,3 +9,6 @@ bookmarks
 .cask
 projectile-bookmarks.eld
 projectile.cache
+
+# OS X stuff
+.DS_STORE

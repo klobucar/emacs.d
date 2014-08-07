@@ -1,18 +1,20 @@
 ;;;; powerline.el
 
 (custom-set-variables
-  '(powerline-default-separator 'arrow))
-(setq powerline-arrow-shape 'arrow14)
+  '(powerline-default-separator 'utf-8))
+
+(setq powerline-arrow-shape 'utf-8)
 
 ;; setup colors
 (set-face-background 'mode-line "grey16")
-(set-face-background 'mode-line-inactive "grey16")
+(set-face-background 'mode-line-inactive "grey40")
 (set-face-foreground 'powerline-active1 "#8FB28F")
 (set-face-foreground 'powerline-active2 "#AFD8AF")
 
 ;; modeline items
-(setq display-time-default-load-average nil)
+(setq display-time-default-load-average 1)
 (display-time-mode 1)
+(setq display-time-24hr-format 1)
 
 ;; mode-line format
 (setq-default mode-line-format

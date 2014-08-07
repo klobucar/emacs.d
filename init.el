@@ -6,7 +6,7 @@
 (cask-initialize)
 
 ;; window size
-(setq default-frame-alist '((font . "Mensch")
+(setq default-frame-alist '((font . "Sauce Code Powerline-13")
                             (width . 200)
                             (height . 80)))
 
@@ -18,6 +18,7 @@
 (if (fboundp 'set-fringe-style) (set-fringe-style '(4 . 0)))
 (if window-system (x-focus-frame nil))
 (setq default-line-spacing 0)
+(setq ns-use-srgb-colorspace t)
 
 ;; set the theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -160,6 +161,12 @@
 (load (emacs-d "packages"))
 
 ;; -- load everything from dotfiles-init-dir ---------------------------------
+;; other vendored plugins
+(add-to-list 'load-path (emacs-d "vendor"))
+(load (emacs-d "vendor/powerline-separators"))
+(load (emacs-d "vendor/powerline-themes.el"))
+(load (emacs-d "vendor/powerline"))
+
 (setq init-file (or load-file-name buffer-file-name))
 (setq dotfiles-dir (file-name-directory init-file))
 (setq dotfiles-init-dir (expand-file-name "configs" dotfiles-dir))
@@ -167,8 +174,6 @@
   (dolist (file (directory-files dotfiles-init-dir t "\\.el$"))
     (load file)))
 
-;; other vendored plugins
-(add-to-list 'load-path (emacs-d "vendor"))
 (load (emacs-d "vendor/jekyll"))
 (load (emacs-d "vendor/linum+"))
 (load (emacs-d "vendor/protobuf-mode"))
@@ -181,10 +186,13 @@
 
 (load (emacs-d "vendor/jsfmt"))
 (add-hook 'before-save-hook 'jsfmt-before-save)
+
 ;; custom functions
 (load (emacs-d "functions"))
 ;; keybindings
 (load (emacs-d "keybindings"))
+
+
 
 ;; configure jekyll blog
 (setq jekyll-post-ext ".md"
@@ -196,12 +204,14 @@
   (server-start))
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(custom-safe-themes (quote ("c7471ce3bb42defac344b3ecfca74228731b5ab20f804fd1deb8e65dddeab26a" default)))
-  '(powerline-default-separator (quote arrow)))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("96b023d1a6e796bab61b472f4379656bcac67b3af4e565d9fb1b6b7989356610" "fc3ba70e150efbe45db40b4b4886fc75716b4f3b1247a4b96e5be7cfbe4bc9e1" "f41fd682a3cd1e16796068a2ca96e82cfd274e58b978156da0acce4d56f2b0d5" "42ac06835f95bc0a734c21c61aeca4286ddd881793364b4e9bc2e7bb8b6cf848" "a99e7c91236b2aba4cd374080c73f390c55173c5a1b4ac662eeb3172b60a9814" "96efbabfb6516f7375cdf85e7781fe7b7249b6e8114676d65337a1ffe78b78d9" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "f0a99f53cbf7b004ba0c1760aa14fd70f2eabafe4e62a2b3cf5cabae8203113b" "53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" default)))
+ '(powerline-default-separator (quote utf-8)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -178,7 +178,10 @@
 (use-package pandoc-mode
   :defer t)
 
-(use-package powerline)
+(use-package powerline
+  init:
+  (progn
+    (setq powerline-arrow-shape 'arrow)))
 
 (use-package projectile
   ;;:init (projectile-global-mode 1)
@@ -223,6 +226,13 @@
     (defalias 'redo 'undo-tree-redo)
     (defalias 'undo 'undo-tree-undo)
     ))
+
+(use-package vagrant-tramp
+  :init
+  (progn
+    (eval-after-load 'tramp
+      '(vagrant-tramp-enable)
+  )))
 
 (use-package yaml-mode
   :defer t)

@@ -6,6 +6,7 @@
         c-electric-paren
         c-electric-semi&comma
         cua--prefix-override-handler
+        cua-cancel
         cua-cut-region
         cua-delete-region
         cua-paste
@@ -27,6 +28,7 @@
 (setq mc/cmds-to-run-once
       '(
         beginning-of-buffer
+        cua-copy-region
         describe-key
         end-of-buffer
         ido-find-file
