@@ -120,6 +120,12 @@
           (let ((ido-ubiquitous-enable-compatibility nil))
             ad-do-it)))))
 
+(use-package jedi
+  :init
+  (progn
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (setq jedi:complete-on-dot t)))
+
 (use-package json-mode
   :defer t)
 

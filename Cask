@@ -24,6 +24,7 @@
 (depends-on "golint")
 (depends-on "haml-mode")
 (depends-on "ido-ubiquitous")
+(depends-on "jedi")
 (depends-on "js2-mode")
 (depends-on "json-mode")
 (depends-on "lua-mode")
