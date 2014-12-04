@@ -224,14 +224,14 @@
   (progn
     (smex-initialize)))
 
-(use-package undo-tree
-  :bind (("s-z" . undo-tree-undo)
-         ("s-Z" . undo-tree-redo))
-  :init
-  (progn
-    (defalias 'redo 'undo-tree-redo)
-    (defalias 'undo 'undo-tree-undo)
-    ))
+; (use-package undo-tree
+;  :bind (("s-z" . undo-tree-undo)
+;          ("s-Z" . undo-tree-redo))
+;   :init
+;   (progn
+;     (defalias 'redo 'undo-tree-redo)
+;     (defalias 'undo 'undo-tree-undo)
+;     ))
 
 (use-package vagrant-tramp
   :init
