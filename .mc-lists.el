@@ -35,6 +35,7 @@
         ido-find-file
         ido-switch-buffer
         js2-mode-show-node
+        mode-line-next-buffer
         mode-line-previous-buffer
         mouse-drag-mode-line
         mouse-set-region

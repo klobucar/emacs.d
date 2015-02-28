@@ -1,6 +1,7 @@
 (source gnu)
 (source melpa)
 
+
 (depends-on "ac-js2")
 (depends-on "ace-jump-mode")
 (depends-on "ag")
@@ -28,6 +29,7 @@
 (depends-on "js2-mode")
 (depends-on "json-mode")
 (depends-on "lua-mode")
+(depends-on "let-alist")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "multi-term")
