@@ -7,8 +7,8 @@
 (require 'tls)
 ;; window size
 (setq default-frame-alist '((font . "Sauce Code Powerline-13")
-                            (width . 200)
-                            (height . 80)))
+                            (width . 120)
+                            (height . 60)))
 
 ;; UI
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))

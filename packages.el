@@ -100,7 +100,7 @@
   :defer t
   :init
   (progn
-    (load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+    (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
     (setq gofmt-command "goimports")
     (go-oracle-mode)
   )
@@ -225,14 +225,14 @@
   (progn
     (smex-initialize)))
 
-; (use-package undo-tree
-;  :bind (("s-z" . undo-tree-undo)
-;          ("s-Z" . undo-tree-redo))
-;   :init
-;   (progn
-;     (defalias 'redo 'undo-tree-redo)
-;     (defalias 'undo 'undo-tree-undo)
-;     ))
+(use-package undo-tree
+ :bind (("s-z" . undo-tree-undo)
+         ("s-Z" . undo-tree-redo))
+  :init
+  (progn
+    (defalias 'redo 'undo-tree-redo)
+    (defalias 'undo 'undo-tree-undo)
+    ))
 
 (use-package vagrant-tramp
   :init
