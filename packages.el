@@ -186,7 +186,7 @@
   :defer t)
 
 (use-package powerline
-  init:
+  :init
   (progn
     (setq powerline-arrow-shape 'arrow)))
 
