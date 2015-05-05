@@ -22,7 +22,7 @@
 
 ;; set the theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'base16-ocean t nil)
+(load-theme 'base16-ocean-dark t nil)
 
 ;; cursor
 (setq-default cursor-type 'bar)
