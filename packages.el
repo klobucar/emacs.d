@@ -100,9 +100,7 @@
   :defer t
   :init
   (progn
-    (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
     (setq gofmt-command "goimports")
-    (go-oracle-mode)
   )
 )
 
